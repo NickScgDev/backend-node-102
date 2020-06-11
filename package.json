@@ -1,0 +1,11 @@
+{
+  "name": "backend-node-101",
+  "version": "1.0.0",
+  "description": "For backend 101",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./app/index.js"
+  },
+  "author": "Chaiwat Tungtongsoontorn <chaiwtun@scg.com>",
+  "license": "ISC"
+}
