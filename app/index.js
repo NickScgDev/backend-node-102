@@ -1,13 +1,37 @@
-const http = require('http');
+const express = require('express');
+const path = require('path');
+
+const server = express();
 
 const port = 3000;
 
-const server = http.createServer(function accessRoute(_, response) {
-  response.writeHead(200, {'Content-Type': 'text/html'});
-  response.write("Hello Everyone");
-  response.end();
-})
+server.use(express.static(path.resolve(__dirname, './public')));
 
-server.listen(port, function () {
-  console.log('App listen on port:', port);
+server.get('/hello/:name', function callHelloToUser(request, response) {
+  const name = request.params.name;
+
+  response.send(`
+    <html>
+      <head>
+        <title>Hello ${name}. This is simple static website</title>
+        <style>
+          body {
+            background-color: pink;
+          }
+        </style>
+      </head>
+      <body>
+        Hello ${name} เป็นยังไงบ้าง <br />
+        ไปเที่ยวกันไหม
+      </body>
+    </html>
+  `);
+});
+
+server.listen(port, function (error) {
+  if (error) {
+    console.error('error');
+  } else {
+    console.log('App listen on port:', port);
+  }
 });
