@@ -2,8 +2,6 @@ const http = require('http');
 
 const port = 3000;
 
-asdfdasfas
-
 const server = http.createServer(function accessRoute(_, response) {
   response.writeHead(200, {'Content-Type': 'text/html'});
   response.write("Hello Everyone");
