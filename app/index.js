@@ -4,7 +4,7 @@ const port = 3000;
 
 const server = http.createServer(function accessRoute(_, response) {
   response.writeHead(200, {'Content-Type': 'text/html'});
-  response.write("Hello Max");
+  response.write("Hello Everyone");
   response.end();
 })
 
